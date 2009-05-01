@@ -1,0 +1,23 @@
+one:
+  user_id: 1
+  name: MyString
+  sequence: MyString
+  description: MyText
+  notes: MyText
+  length: 1
+  gcpercentage: 1.5
+  tm: 1.5
+  freezer: MyString
+  box: MyString
+
+two:
+  user_id: 1
+  name: MyString
+  sequence: MyString
+  description: MyText
+  notes: MyText
+  length: 1
+  gcpercentage: 1.5
+  tm: 1.5
+  freezer: MyString
+  box: MyString

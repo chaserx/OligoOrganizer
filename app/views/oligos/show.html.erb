@@ -1,0 +1,48 @@
+<% title "Oligo" %>
+
+<p>
+  <strong>User:</strong>
+  <%=h @oligo.user_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%=h @oligo.name %>
+</p>
+<p>
+  <strong>Sequence:</strong>
+  <%=h @oligo.sequence %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @oligo.description %>
+</p>
+<p>
+  <strong>Notes:</strong>
+  <%=h @oligo.notes %>
+</p>
+<p>
+  <strong>Length:</strong>
+  <%=h @oligo.length %>
+</p>
+<p>
+  <strong>Gcpercentage:</strong>
+  <%=h @oligo.gcpercentage %>
+</p>
+<p>
+  <strong>Tm:</strong>
+  <%=h @oligo.tm %>
+</p>
+<p>
+  <strong>Freezer:</strong>
+  <%=h @oligo.freezer %>
+</p>
+<p>
+  <strong>Box:</strong>
+  <%=h @oligo.box %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_oligo_path(@oligo) %> |
+  <%= link_to "Destroy", @oligo, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", oligos_path %>
+</p>

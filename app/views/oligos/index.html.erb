@@ -1,0 +1,35 @@
+<% title "Oligos" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th>Sequence</th>
+    <th>Description</th>
+    <th>Notes</th>
+    <th>Length</th>
+    <th>Gcpercentage</th>
+    <th>Tm</th>
+    <th>Freezer</th>
+    <th>Box</th>
+  </tr>
+  <% for oligo in @oligos %>
+    <tr>
+      <td><%=h oligo.user_id %></td>
+      <td><%=h oligo.name %></td>
+      <td><%=h oligo.sequence %></td>
+      <td><%=h oligo.description %></td>
+      <td><%=h oligo.notes %></td>
+      <td><%=h oligo.length %></td>
+      <td><%=h oligo.gcpercentage %></td>
+      <td><%=h oligo.tm %></td>
+      <td><%=h oligo.freezer %></td>
+      <td><%=h oligo.box %></td>
+      <td><%= link_to "Show", oligo %></td>
+      <td><%= link_to "Edit", edit_oligo_path(oligo) %></td>
+      <td><%= link_to "Destroy", oligo, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Oligo", new_oligo_path %></p>

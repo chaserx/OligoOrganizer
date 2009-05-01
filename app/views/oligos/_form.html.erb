@@ -1,0 +1,44 @@
+<% form_for @oligo do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :sequence %><br />
+    <%= f.text_field :sequence %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </p>
+  <p>
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </p>
+  <p>
+    <%= f.label :gcpercentage %><br />
+    <%= f.text_field :gcpercentage %>
+  </p>
+  <p>
+    <%= f.label :tm %><br />
+    <%= f.text_field :tm %>
+  </p>
+  <p>
+    <%= f.label :freezer %><br />
+    <%= f.text_field :freezer %>
+  </p>
+  <p>
+    <%= f.label :box %><br />
+    <%= f.text_field :box %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
