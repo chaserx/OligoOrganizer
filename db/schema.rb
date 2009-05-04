@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090501211834) do
+ActiveRecord::Schema.define(:version => 20090501215315) do
+
+  create_table "oligos", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "sequence"
+    t.text     "description"
+    t.text     "notes"
+    t.integer  "length"
+    t.float    "gcpercentage"
+    t.float    "tm"
+    t.string   "freezer"
+    t.string   "box"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :default => "", :null => false
