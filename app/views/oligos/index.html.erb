@@ -15,8 +15,8 @@
   </tr>
   <% for oligo in @oligos %>
     <tr>
-      <td><%=h oligo.user_id %></td>
-      <td><%=h oligo.name %></td>
+      <td><%=h oligo.user.login %></td>
+      <td><%= link_to "#{h(oligo.name)}", oligo %></td>
       <td><%=h oligo.sequence %></td>
       <td><%=h oligo.description %></td>
       <td><%=h oligo.notes %></td>
@@ -25,11 +25,14 @@
       <td><%=h oligo.tm %></td>
       <td><%=h oligo.freezer %></td>
       <td><%=h oligo.box %></td>
-      <td><%= link_to "Show", oligo %></td>
+			<% if logged_in? %>
       <td><%= link_to "Edit", edit_oligo_path(oligo) %></td>
       <td><%= link_to "Destroy", oligo, :confirm => 'Are you sure?', :method => :delete %></td>
+			<% end %>
     </tr>
   <% end %>
 </table>
 
+<% if logged_in? %>
 <p><%= link_to "New Oligo", new_oligo_path %></p>
+<% end %>

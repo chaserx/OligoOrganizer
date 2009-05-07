@@ -1,6 +1,8 @@
 class OligosController < ApplicationController
+  before_filter :login_required, :except => [ :index, :show ]
   def index
     @oligos = Oligo.all
+    @users = User.all
   end
   
   def show
@@ -13,6 +15,7 @@ class OligosController < ApplicationController
   
   def create
     @oligo = Oligo.new(params[:oligo])
+    @oligo = current_user.oligos.create(params[:oligo]) #thanks Leslie Hensley
     if @oligo.save
       flash[:notice] = "Successfully created oligo."
       redirect_to @oligo

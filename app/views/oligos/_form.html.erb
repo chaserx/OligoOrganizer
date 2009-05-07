@@ -1,10 +1,6 @@
 <% form_for @oligo do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
@@ -19,18 +15,6 @@
   <p>
     <%= f.label :notes %><br />
     <%= f.text_area :notes %>
-  </p>
-  <p>
-    <%= f.label :length %><br />
-    <%= f.text_field :length %>
-  </p>
-  <p>
-    <%= f.label :gcpercentage %><br />
-    <%= f.text_field :gcpercentage %>
-  </p>
-  <p>
-    <%= f.label :tm %><br />
-    <%= f.text_field :tm %>
   </p>
   <p>
     <%= f.label :freezer %><br />
