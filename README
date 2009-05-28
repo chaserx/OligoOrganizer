@@ -1,1 +1,39 @@
 OligoOrganizer
+
+Description
+A simple app to manage Oligonucleotide curation for a small lab.
+
+Requirements
+Rails 2.3.2
+rubyist-aasm
+bio
+
+Setup
+
+Create your databases
+
+OligoOrganizer_development; _test; _production
+
+Copy database.yml.example to database.yml
+Enter your MySQL user credentials
+
+Copy passwords_config.yml.example to passwords_config.yml
+
+Run this Ruby code from the Restful Authentication plugin in a new file separately to generate your site key.
+
+#!/usr/bin/env ruby -wKU
+require 'digest/sha1'
+def secure_digest(*args)
+  Digest::SHA1.hexdigest(args.flatten.join('--'))
+end
+def make_token
+  secure_digest(Time.now, (1..10).map{ rand.to_s })
+end
+puts make_token
+
+Copy token into the passwords.yml file
+Change your username and passwords for the relevant rails environment
+Take care to examine the yml file as hard tabs might be replace the soft tabs and thus violate the yml structure. Removing the hard tabs and replacing with soft tabs (2 spaces) should do it.
+
+Run Rake db:migrate
+
