@@ -2,7 +2,11 @@
 
 <p>
   <strong>User:</strong>
-  <%=h @oligo.user_id %>
+  <%=h @oligo.user.login %>
+</p>
+<p>
+  <strong>Oligo ID:</strong>
+  <%= h @oligo.id %>
 </p>
 <p>
   <strong>Name:</strong>

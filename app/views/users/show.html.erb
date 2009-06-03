@@ -1,6 +1,8 @@
 <% title 'Profile' %>
 <%= render :partial => "users/user_bar" %>
 
+<%= link_to "View my oligos", oligos_path %>
+
 <h1>Username</h1>
 <%= h @user.login %>
 <h1>Email</h1>
