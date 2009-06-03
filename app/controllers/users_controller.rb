@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :login_required, :only => :show
+  in_place_edit_for :user, :email
   
 
   # render new.rhtml
@@ -66,7 +68,15 @@ class UsersController < ApplicationController
   # There's no page here to update or destroy a user.  If you add those, be
   # smart -- make sure you check that the visitor is authorized to do so, that they
   # supply their old password along with a new one to update it, etc.
-
+  
+  def show
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    
+  end
+  
 protected
   def find_user
     @user = User.find(params[:id])
