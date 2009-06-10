@@ -42,7 +42,9 @@
 </p>
 
 <p>
+	<% if logged_in? %>
   <%= link_to "Edit", edit_oligo_path(@oligo) %> |
   <%= link_to "Destroy", @oligo, :confirm => 'Are you sure?', :method => :delete %> |
+	<% end %>
   <%= link_to "View All", oligos_path %>
 </p>
