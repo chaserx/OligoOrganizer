@@ -1,37 +1,32 @@
-<% title "My Oligos" %>
+<% if logged_in? %>
+  <% title "#{current_user.login.capitalize}'s Oligos" %>
+<% else %>
+  <% title "All Oligos" %>
+<% end %>
 <%= render :partial => "users/user_bar" %>
-<table>
-  <tr>
-    <th>User</th>
-    <th>Name</th>
-    <th>Sequence</th>
-    <th>Description</th>
-    <th>Notes</th>
-    <th>Length</th>
-    <th>Gcpercentage</th>
-    <th>Tm</th>
-    <th>Freezer</th>
-    <th>Box</th>
-  </tr>
+
+
+<div id="oligolist">
   <% for oligo in @oligos %>
-    <tr>
-      <td><%=h oligo.user.login %></td>
-      <td><%= link_to "#{h(oligo.name)}", oligo %></td>
-      <td><%=h oligo.sequence %></td>
-      <td><%=h oligo.description %></td>
-      <td><%=h oligo.notes %></td>
-      <td><%=h oligo.length %></td>
-      <td><%=h oligo.gcpercentage %></td>
-      <td><%=h oligo.tm %></td>
-      <td><%=h oligo.freezer %></td>
-      <td><%=h oligo.box %></td>
-			<% if logged_in? %>
-      <td><%= link_to "Edit", edit_oligo_path(oligo) %></td>
-      <td><%= link_to "Destroy", oligo, :confirm => 'Are you sure?', :method => :delete %></td>
-			<% end %>
-    </tr>
+  <div class="date">
+    <%= oligo.created_at.strftime('%d %b %y') %>
+  </div>
+  <div class="oligo">
+    <%= link_to "#{h(oligo.name)}", oligo %> <br /> <% if !logged_in? %> saved by: <%=h oligo.user.login %> <% end %> <% if logged_in? %> <%= link_to "Edit", edit_oligo_path(oligo) %> <%= link_to "Destroy", oligo, :confirm => 'Are you sure?', :method => :delete %> <% end %>
+  </div>
+  <div class="clearthemall"></div>
   <% end %>
-</table>
+</div>
+
+
+
+  
+
+      
+			
+
+  
+
 
 <% if logged_in? %>
 <p><%= link_to "New Oligo", new_oligo_path %></p>

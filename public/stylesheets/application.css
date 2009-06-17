@@ -79,3 +79,17 @@ a {
   font-size: 12px;
   list-style: disc;
 }
+.date{
+	float:left;
+}
+.oligo{
+	float:left;
+	border-bottom: 1px solid #999;
+}
+.clearthemall{
+	clear:both;
+}
+#oligolist{
+	margin-top: 20px;
+	border-top: 1px solid #999;
+}
