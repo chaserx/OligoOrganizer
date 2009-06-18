@@ -81,15 +81,23 @@ a {
 }
 .date{
 	float:left;
+	width:10%;
 }
 .oligo{
-	float:left;
 	border-bottom: 1px solid #999;
+	margin-top:10px;
+}
+.entry{
+	float:left;
+	width:90%;
 }
 .clearthemall{
 	clear:both;
 }
 #oligolist{
-	margin-top: 20px;
 	border-top: 1px solid #999;
+	margin-top: 20px;
+}
+#userbar{
+	float:right;
 }

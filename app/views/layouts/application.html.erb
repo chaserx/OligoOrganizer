@@ -9,6 +9,11 @@
   </head>
   <body>
     <div id="container">
+      <div id="userbar"><%= render :partial => "users/user_bar" %></div>
+      <div id="header">
+        
+      </div>
+      <div class="clearthemall"></div>
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <%- end -%>

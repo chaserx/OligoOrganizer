@@ -1,8 +1,13 @@
 class OligosController < ApplicationController
   before_filter :login_required, :except => [ :index, :show ]
   def index
-    @oligos = Oligo.all
-    @users = User.all
+    if logged_in?
+      @user = current_user
+      @oligos = current_user.oligos.all
+    else
+      @oligos = Oligo.all
+      @users = User.all
+    end
   end
   
   def show

@@ -3,18 +3,23 @@
 <% else %>
   <% title "All Oligos" %>
 <% end %>
-<%= render :partial => "users/user_bar" %>
 
+<% if logged_in? %>
+<p><%= link_to "New Oligo", new_oligo_path %></p>
+<% end %>
 
 <div id="oligolist">
   <% for oligo in @oligos %>
-  <div class="date">
-    <%= oligo.created_at.strftime('%d %b %y') %>
-  </div>
   <div class="oligo">
-    <%= link_to "#{h(oligo.name)}", oligo %> <br /> <% if !logged_in? %> saved by: <%=h oligo.user.login %> <% end %> <% if logged_in? %> <%= link_to "Edit", edit_oligo_path(oligo) %> <%= link_to "Destroy", oligo, :confirm => 'Are you sure?', :method => :delete %> <% end %>
+    <div class="date">
+      <%= oligo.created_at.strftime('%d %b %y') %>
+    </div>
+    <div class="entry">
+      <%= link_to "#{h(oligo.name)}", oligo %> <br /> <% if !logged_in? %> saved by: <%=h oligo.user.login %> <% end %> <% if logged_in? %> <%= link_to "Edit", edit_oligo_path(oligo) %> <%= link_to "Destroy", oligo, :confirm => 'Are you sure?', :method => :delete %> <% end %>
+    </div>
+    <div class="clearthemall"></div>
   </div>
-  <div class="clearthemall"></div>
+  
   <% end %>
 </div>
 
@@ -26,8 +31,3 @@
 			
 
   
-
-
-<% if logged_in? %>
-<p><%= link_to "New Oligo", new_oligo_path %></p>
-<% end %>
