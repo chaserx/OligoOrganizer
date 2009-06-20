@@ -15,7 +15,7 @@
       <%= oligo.created_at.strftime('%d %b %y') %>
     </div>
     <div class="entry">
-      <%= link_to "#{h(oligo.name)}", oligo %> <br /> <% if !logged_in? %> saved by: <%=h oligo.user.login %> <% end %> <% if logged_in? %> <%= link_to "Edit", edit_oligo_path(oligo) %> <%= link_to "Destroy", oligo, :confirm => 'Are you sure?', :method => :delete %> <% end %>
+      <%= link_to "#{h(oligo.name)}", oligo %> &rsaquo; <%= h(oligo.sequence) %><br /> <% if !logged_in? %> saved by: <%=h oligo.user.login %> <% end %> <% if logged_in? %> <%= link_to "Edit", edit_oligo_path(oligo) %> <%= link_to "Destroy", oligo, :confirm => 'Are you sure?', :method => :delete %> <% end %>
     </div>
     <div class="clearthemall"></div>
   </div>
