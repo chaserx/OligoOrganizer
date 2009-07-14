@@ -103,3 +103,8 @@ a {
 #userbar{
 	float:right;
 }
+#footer{
+	text-align:center;
+	color:#fff;
+	margin-top: 20px;
+}
