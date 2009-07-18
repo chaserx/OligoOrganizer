@@ -1,28 +1,44 @@
-<% form_for @oligo do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :sequence %><br />
-    <%= f.text_field :sequence %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </p>
-  <p>
-    <%= f.label :freezer %><br />
-    <%= f.text_field :freezer %>
-  </p>
-  <p>
-    <%= f.label :box %><br />
-    <%= f.text_field :box %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
+<p>* = Required</p>
+<% semantic_form_for @oligo do |form| %>
+  <%= form.error_messages %>
+  <% form.inputs do %>
+    <%= form.input :name %>
+    <%= form.input :species, :as => :select,  :collection => ["Arabidopsis thaliana",
+    "Escherichia coli",
+    "Pneumocystis carinii",
+    "Bos taurus",
+    "Hepatitis C virus",
+    "Rattus norvegicus",
+    "Caenorhabditis elegans",
+    "Homo sapiens",
+    "Saccharomyces cerevisiae",
+    "Chlamydomonas reinhardtii",
+    "Mus musculus",
+    "Schizosaccharomyces pombe",
+    "Danio rerio",
+    "Mycoplasma pneumoniae",
+    "Takifugu rubripes",
+    "Dictyostelium discoideum",
+    "Oryza sativa",
+    "Xenopus laevis",
+    "Drosophila melanogaster",
+    "Plasmodium falciparum",
+    "Zea mays",
+    "Pan troglodytes",
+    "Pongo abelii",
+    "Pongo pygmaeus"].sort %>
+  
+    <%= form.input :sequence %>
+    <%= form.input :description, :required => false %>
+    <%= form.input :notes, :required => false %>
+    <%= form.input :freezer %>
+    <%= form.input :box %>
+  <% end %>
+  
+  <% form.buttons do %>
+    <%= form.commit_button %>
+  <% end %>
+    
 <% end %>
+
+

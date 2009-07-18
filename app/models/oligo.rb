@@ -8,6 +8,7 @@ class Oligo < ActiveRecord::Base
   validates_format_of :sequence, :with => /\D\S/
   
   before_save :calculate_sequence_info 
+  before_update :calculate_sequence_info
   
   private
   def calculate_sequence_info

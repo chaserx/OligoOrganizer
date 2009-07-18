@@ -108,3 +108,7 @@ a {
 	color:#fff;
 	margin-top: 20px;
 }
+#footer a:link, #footer a:visited { color: #fff; }
+#footer a:hover, #footer a:active { background:#fff; color: #4B7399; }
+#header a:link, #header a:visited { color: #000; text-decoration: none;}
+#header a:hover, #header a:active { color:#4B7399;}
