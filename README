@@ -6,7 +6,8 @@ A simple app to manage Oligonucleotide curation for a small lab.
 Requirements
 Rails 2.3.2
 rubyist-aasm
-bio
+bioruby
+formtastic
 
 Setup
 

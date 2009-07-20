@@ -21,6 +21,14 @@ class Oligo < ActiveRecord::Base
     #need Tm calculation here
     #Salt adjusted calculation
     #Tm =  81.5°C  +  16.6°C  x  (log10[Na+] + [K+])  +  0.41°C  x  (%GC)  –  675/N
-    self.tm = 81.5 + 16.6 * Math.log10(0.05) + 0.41 * my_sequence.gc_percent - 675/my_sequence.size.to_i
+    
+    #self.tm = 81.5 + 16.6 * Math.log10(0.05) + 0.41 * my_sequence.gc_percent - 675/my_sequence.size.to_i
+    
+    #Other calculation for primers longer than 13bp from biophp.org
+    #Tm= 64.9 +41*(yG+zC-16.4)/(wA+xT+yG+zC)
+    #assumes 50 nM primer, 50 mM Na+, and pH 7.0.
+    
+    self.tm = 64.9 + 41 * (((my_sequence.size.to_i * (my_sequence.gc_percent.to_f/100))-16.4)/my_sequence.size.to_i)
+    
   end
 end
