@@ -14,7 +14,7 @@ class Oligo < ActiveRecord::Base
   def calculate_sequence_info
     my_sequence = Bio::Sequence.auto(self.sequence)
     self.sequence = self.sequence.downcase
-    self.gcpercentage = my_sequence.gc_percent
+    self.gcpercentage = my_sequence.gc_percent.to_f
     self.length = my_sequence.size.to_i
     
     
