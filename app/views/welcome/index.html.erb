@@ -1,3 +1,10 @@
-<h1>Hi There!</h1>
-<p>This is an attempt organize more molecular biology lab data, specifically Oligonucleotides.</p>
-<p><%= link_to "Check out these oligos", oligos_path %></p>
+<% title 'Welcome! Find some oligos!', FALSE %>
+<h1 style="text-align:center;">Hi There! Find the oligos you&apos;ve been looking for.</h1>
+<form id="search" action="#" method="get" accept-charset="utf-8">
+  <p style="margin-left:auto;margin-right:auto;text-align:center"><input type="text" />
+  <input type="submit" value="SEARCH"> or <%= link_to "Browse all oligos", oligos_path %></p>
+</form>
+<h2>About</h2>
+<p>This application is here to help you organize and share more molecular biology lab data, specifically, here, Oligonucleotides.
+  Unleash the chains of the three-ring binder and embrace the cloud. Use the search field above to see if what you're looking for already exists or sign-up to deposit your records into the system for everyone to share.</p>
+
