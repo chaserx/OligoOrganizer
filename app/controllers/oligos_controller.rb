@@ -3,9 +3,11 @@ class OligosController < ApplicationController
   def index
     if logged_in?
       @user = current_user
-      @oligos = current_user.oligos.all
+      #@oligos = current_user.oligos.all
+      @oligos = current_user.oligos.paginate :page => params[:page], :order => 'updated_at DESC'
+      # @posts = Post.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
     else
-      @oligos = Oligo.all
+      @oligos = Oligo.paginate :page => params[:page], :order => 'updated_at DESC'
       @users = User.all
     end
   end

@@ -7,7 +7,7 @@
 <% if logged_in? %>
 <p><%= link_to "New Oligo", new_oligo_path %></p>
 <% end %>
-
+<%= will_paginate @oligos %>
 <div id="oligolist">
   <% for oligo in @oligos %>
   <div class="oligo">

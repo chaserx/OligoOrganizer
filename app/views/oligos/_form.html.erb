@@ -3,7 +3,8 @@
   <%= form.error_messages %>
   <% form.inputs do %>
     <%= form.input :name %>
-    <%= form.input :species, :as => :select,  :collection => ["Arabidopsis thaliana",
+    <%= form.input :species, :as => :select,  :collection => ["Unknown", "Not-specific",
+    "Arabidopsis thaliana",
     "Escherichia coli",
     "Pneumocystis carinii",
     "Bos taurus",

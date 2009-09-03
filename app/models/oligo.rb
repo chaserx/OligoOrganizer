@@ -1,6 +1,11 @@
 class Oligo < ActiveRecord::Base
   require 'bio'
   
+  #pagination limit
+  def self.per_page
+    10
+  end
+  
   belongs_to :user
   
   validates_presence_of :name, :sequence
